@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExplorarRouteImport } from './routes/explorar'
+import { Route as HistoricoRouteImport } from './routes/historico'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PagamentoRouteImport } from './routes/pagamento'
+import { Route as CadastroEnderecoRouteImport } from './routes/cadastro.endereco'
+import { Route as CadastroTelefoneRouteImport } from './routes/cadastro.telefone'
+import { Route as RestauranteIdRouteImport } from './routes/restaurante.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExplorarRoute = ExplorarRouteImport.update({
+  id: '/explorar',
+  path: '/explorar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricoRoute = HistoricoRouteImport.update({
+  id: '/historico',
+  path: '/historico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PagamentoRoute = PagamentoRouteImport.update({
+  id: '/pagamento',
+  path: '/pagamento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CadastroEnderecoRoute = CadastroEnderecoRouteImport.update({
+  id: '/cadastro/endereco',
+  path: '/cadastro/endereco',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CadastroTelefoneRoute = CadastroTelefoneRouteImport.update({
+  id: '/cadastro/telefone',
+  path: '/cadastro/telefone',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RestauranteIdRoute = RestauranteIdRouteImport.update({
+  id: '/restaurante/$id',
+  path: '/restaurante/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/explorar': typeof ExplorarRoute
+  '/historico': typeof HistoricoRoute
+  '/login': typeof LoginRoute
+  '/pagamento': typeof PagamentoRoute
+  '/cadastro/endereco': typeof CadastroEnderecoRoute
+  '/cadastro/telefone': typeof CadastroTelefoneRoute
+  '/restaurante/$id': typeof RestauranteIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/explorar': typeof ExplorarRoute
+  '/historico': typeof HistoricoRoute
+  '/login': typeof LoginRoute
+  '/pagamento': typeof PagamentoRoute
+  '/cadastro/endereco': typeof CadastroEnderecoRoute
+  '/cadastro/telefone': typeof CadastroTelefoneRoute
+  '/restaurante/$id': typeof RestauranteIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/explorar': typeof ExplorarRoute
+  '/historico': typeof HistoricoRoute
+  '/login': typeof LoginRoute
+  '/pagamento': typeof PagamentoRoute
+  '/cadastro/endereco': typeof CadastroEnderecoRoute
+  '/cadastro/telefone': typeof CadastroTelefoneRoute
+  '/restaurante/$id': typeof RestauranteIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/explorar'
+    | '/historico'
+    | '/login'
+    | '/pagamento'
+    | '/cadastro/endereco'
+    | '/cadastro/telefone'
+    | '/restaurante/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/explorar'
+    | '/historico'
+    | '/login'
+    | '/pagamento'
+    | '/cadastro/endereco'
+    | '/cadastro/telefone'
+    | '/restaurante/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/explorar'
+    | '/historico'
+    | '/login'
+    | '/pagamento'
+    | '/cadastro/endereco'
+    | '/cadastro/telefone'
+    | '/restaurante/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ExplorarRoute: typeof ExplorarRoute
+  HistoricoRoute: typeof HistoricoRoute
+  LoginRoute: typeof LoginRoute
+  PagamentoRoute: typeof PagamentoRoute
+  CadastroEnderecoRoute: typeof CadastroEnderecoRoute
+  CadastroTelefoneRoute: typeof CadastroTelefoneRoute
+  RestauranteIdRoute: typeof RestauranteIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/explorar': {
+      id: '/explorar'
+      path: '/explorar'
+      fullPath: '/explorar'
+      preLoaderRoute: typeof ExplorarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historico': {
+      id: '/historico'
+      path: '/historico'
+      fullPath: '/historico'
+      preLoaderRoute: typeof HistoricoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pagamento': {
+      id: '/pagamento'
+      path: '/pagamento'
+      fullPath: '/pagamento'
+      preLoaderRoute: typeof PagamentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro/endereco': {
+      id: '/cadastro/endereco'
+      path: '/cadastro/endereco'
+      fullPath: '/cadastro/endereco'
+      preLoaderRoute: typeof CadastroEnderecoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro/telefone': {
+      id: '/cadastro/telefone'
+      path: '/cadastro/telefone'
+      fullPath: '/cadastro/telefone'
+      preLoaderRoute: typeof CadastroTelefoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/restaurante/$id': {
+      id: '/restaurante/$id'
+      path: '/restaurante/$id'
+      fullPath: '/restaurante/$id'
+      preLoaderRoute: typeof RestauranteIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ExplorarRoute: ExplorarRoute,
+  HistoricoRoute: HistoricoRoute,
+  LoginRoute: LoginRoute,
+  PagamentoRoute: PagamentoRoute,
+  CadastroEnderecoRoute: CadastroEnderecoRoute,
+  CadastroTelefoneRoute: CadastroTelefoneRoute,
+  RestauranteIdRoute: RestauranteIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
