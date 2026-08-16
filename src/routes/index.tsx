@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "EntregaFood — Peça comida em minutos" },
       {
         property: "og:description",
-        content: "Restaurantes, mercados e farmácias com entrega rápida.",
+        content: "Explore restaurantes, mercados e farmácias perto de você e acompanhe seu pedido em tempo real.",
       },
     ],
   }),

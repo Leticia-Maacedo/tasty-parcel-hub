@@ -77,14 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "EntregaFood — Sistema de Delivery" },
+      { title: "EntregaFood — Peça comida em minutos" },
       {
         name: "description",
         content:
-          "Sistema de delivery completo com áreas de cliente, parceiro e administração.",
+          "Explore restaurantes, mercados e farmácias perto de você e acompanhe seu pedido em tempo real.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "EntregaFood — Peça comida em minutos" },
+      { name: "twitter:title", content: "EntregaFood — Peça comida em minutos" },
+      { property: "og:description", content: "Explore restaurantes, mercados e farmácias perto de você e acompanhe seu pedido em tempo real." },
+      { name: "twitter:description", content: "Explore restaurantes, mercados e farmácias perto de você e acompanhe seu pedido em tempo real." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f752a4ce-1b77-4e6c-b503-8ad686ab0863" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f752a4ce-1b77-4e6c-b503-8ad686ab0863" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
