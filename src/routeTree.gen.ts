@@ -14,9 +14,18 @@ import { Route as ExplorarRouteImport } from './routes/explorar'
 import { Route as HistoricoRouteImport } from './routes/historico'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as PagamentoRouteImport } from './routes/pagamento'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminEntregasRouteImport } from './routes/admin.entregas'
+import { Route as AdminFuncionalidadesRouteImport } from './routes/admin.funcionalidades'
+import { Route as AdminRestaurantesRouteImport } from './routes/admin.restaurantes'
 import { Route as CadastroEnderecoRouteImport } from './routes/cadastro.endereco'
 import { Route as CadastroTelefoneRouteImport } from './routes/cadastro.telefone'
+import { Route as ParceiroIndexRouteImport } from './routes/parceiro.index'
+import { Route as ParceiroAvaliacoesRouteImport } from './routes/parceiro.avaliacoes'
+import { Route as ParceiroCardapiosRouteImport } from './routes/parceiro.cardapios'
 import { Route as RestauranteIdRouteImport } from './routes/restaurante.$id'
+import { Route as AdminPedidosIndexRouteImport } from './routes/admin.pedidos.index'
+import { Route as AdminPedidosIdRouteImport } from './routes/admin.pedidos.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -43,6 +52,26 @@ const PagamentoRoute = PagamentoRouteImport.update({
   path: '/pagamento',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminEntregasRoute = AdminEntregasRouteImport.update({
+  id: '/admin/entregas',
+  path: '/admin/entregas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminFuncionalidadesRoute = AdminFuncionalidadesRouteImport.update({
+  id: '/admin/funcionalidades',
+  path: '/admin/funcionalidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRestaurantesRoute = AdminRestaurantesRouteImport.update({
+  id: '/admin/restaurantes',
+  path: '/admin/restaurantes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CadastroEnderecoRoute = CadastroEnderecoRouteImport.update({
   id: '/cadastro/endereco',
   path: '/cadastro/endereco',
@@ -53,9 +82,34 @@ const CadastroTelefoneRoute = CadastroTelefoneRouteImport.update({
   path: '/cadastro/telefone',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ParceiroIndexRoute = ParceiroIndexRouteImport.update({
+  id: '/parceiro/',
+  path: '/parceiro/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParceiroAvaliacoesRoute = ParceiroAvaliacoesRouteImport.update({
+  id: '/parceiro/avaliacoes',
+  path: '/parceiro/avaliacoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParceiroCardapiosRoute = ParceiroCardapiosRouteImport.update({
+  id: '/parceiro/cardapios',
+  path: '/parceiro/cardapios',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RestauranteIdRoute = RestauranteIdRouteImport.update({
   id: '/restaurante/$id',
   path: '/restaurante/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPedidosIndexRoute = AdminPedidosIndexRouteImport.update({
+  id: '/admin/pedidos/',
+  path: '/admin/pedidos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPedidosIdRoute = AdminPedidosIdRouteImport.update({
+  id: '/admin/pedidos/$id',
+  path: '/admin/pedidos/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -65,9 +119,18 @@ export interface FileRoutesByFullPath {
   '/historico': typeof HistoricoRoute
   '/login': typeof LoginRoute
   '/pagamento': typeof PagamentoRoute
+  '/admin/entregas': typeof AdminEntregasRoute
+  '/admin/funcionalidades': typeof AdminFuncionalidadesRoute
+  '/admin/restaurantes': typeof AdminRestaurantesRoute
   '/cadastro/endereco': typeof CadastroEnderecoRoute
   '/cadastro/telefone': typeof CadastroTelefoneRoute
+  '/parceiro/avaliacoes': typeof ParceiroAvaliacoesRoute
+  '/parceiro/cardapios': typeof ParceiroCardapiosRoute
   '/restaurante/$id': typeof RestauranteIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/parceiro/': typeof ParceiroIndexRoute
+  '/admin/pedidos/$id': typeof AdminPedidosIdRoute
+  '/admin/pedidos/': typeof AdminPedidosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -75,9 +138,18 @@ export interface FileRoutesByTo {
   '/historico': typeof HistoricoRoute
   '/login': typeof LoginRoute
   '/pagamento': typeof PagamentoRoute
+  '/admin/entregas': typeof AdminEntregasRoute
+  '/admin/funcionalidades': typeof AdminFuncionalidadesRoute
+  '/admin/restaurantes': typeof AdminRestaurantesRoute
   '/cadastro/endereco': typeof CadastroEnderecoRoute
   '/cadastro/telefone': typeof CadastroTelefoneRoute
+  '/parceiro/avaliacoes': typeof ParceiroAvaliacoesRoute
+  '/parceiro/cardapios': typeof ParceiroCardapiosRoute
   '/restaurante/$id': typeof RestauranteIdRoute
+  '/admin': typeof AdminIndexRoute
+  '/parceiro': typeof ParceiroIndexRoute
+  '/admin/pedidos/$id': typeof AdminPedidosIdRoute
+  '/admin/pedidos': typeof AdminPedidosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -86,9 +158,18 @@ export interface FileRoutesById {
   '/historico': typeof HistoricoRoute
   '/login': typeof LoginRoute
   '/pagamento': typeof PagamentoRoute
+  '/admin/entregas': typeof AdminEntregasRoute
+  '/admin/funcionalidades': typeof AdminFuncionalidadesRoute
+  '/admin/restaurantes': typeof AdminRestaurantesRoute
   '/cadastro/endereco': typeof CadastroEnderecoRoute
   '/cadastro/telefone': typeof CadastroTelefoneRoute
+  '/parceiro/avaliacoes': typeof ParceiroAvaliacoesRoute
+  '/parceiro/cardapios': typeof ParceiroCardapiosRoute
   '/restaurante/$id': typeof RestauranteIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/parceiro/': typeof ParceiroIndexRoute
+  '/admin/pedidos/$id': typeof AdminPedidosIdRoute
+  '/admin/pedidos/': typeof AdminPedidosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -98,9 +179,18 @@ export interface FileRouteTypes {
     | '/historico'
     | '/login'
     | '/pagamento'
+    | '/admin/entregas'
+    | '/admin/funcionalidades'
+    | '/admin/restaurantes'
     | '/cadastro/endereco'
     | '/cadastro/telefone'
+    | '/parceiro/avaliacoes'
+    | '/parceiro/cardapios'
     | '/restaurante/$id'
+    | '/admin/'
+    | '/parceiro/'
+    | '/admin/pedidos/$id'
+    | '/admin/pedidos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -108,9 +198,18 @@ export interface FileRouteTypes {
     | '/historico'
     | '/login'
     | '/pagamento'
+    | '/admin/entregas'
+    | '/admin/funcionalidades'
+    | '/admin/restaurantes'
     | '/cadastro/endereco'
     | '/cadastro/telefone'
+    | '/parceiro/avaliacoes'
+    | '/parceiro/cardapios'
     | '/restaurante/$id'
+    | '/admin'
+    | '/parceiro'
+    | '/admin/pedidos/$id'
+    | '/admin/pedidos'
   id:
     | '__root__'
     | '/'
@@ -118,9 +217,18 @@ export interface FileRouteTypes {
     | '/historico'
     | '/login'
     | '/pagamento'
+    | '/admin/entregas'
+    | '/admin/funcionalidades'
+    | '/admin/restaurantes'
     | '/cadastro/endereco'
     | '/cadastro/telefone'
+    | '/parceiro/avaliacoes'
+    | '/parceiro/cardapios'
     | '/restaurante/$id'
+    | '/admin/'
+    | '/parceiro/'
+    | '/admin/pedidos/$id'
+    | '/admin/pedidos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -129,9 +237,18 @@ export interface RootRouteChildren {
   HistoricoRoute: typeof HistoricoRoute
   LoginRoute: typeof LoginRoute
   PagamentoRoute: typeof PagamentoRoute
+  AdminEntregasRoute: typeof AdminEntregasRoute
+  AdminFuncionalidadesRoute: typeof AdminFuncionalidadesRoute
+  AdminRestaurantesRoute: typeof AdminRestaurantesRoute
   CadastroEnderecoRoute: typeof CadastroEnderecoRoute
   CadastroTelefoneRoute: typeof CadastroTelefoneRoute
+  ParceiroAvaliacoesRoute: typeof ParceiroAvaliacoesRoute
+  ParceiroCardapiosRoute: typeof ParceiroCardapiosRoute
   RestauranteIdRoute: typeof RestauranteIdRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  ParceiroIndexRoute: typeof ParceiroIndexRoute
+  AdminPedidosIdRoute: typeof AdminPedidosIdRoute
+  AdminPedidosIndexRoute: typeof AdminPedidosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -171,6 +288,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PagamentoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/entregas': {
+      id: '/admin/entregas'
+      path: '/admin/entregas'
+      fullPath: '/admin/entregas'
+      preLoaderRoute: typeof AdminEntregasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/funcionalidades': {
+      id: '/admin/funcionalidades'
+      path: '/admin/funcionalidades'
+      fullPath: '/admin/funcionalidades'
+      preLoaderRoute: typeof AdminFuncionalidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/restaurantes': {
+      id: '/admin/restaurantes'
+      path: '/admin/restaurantes'
+      fullPath: '/admin/restaurantes'
+      preLoaderRoute: typeof AdminRestaurantesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cadastro/endereco': {
       id: '/cadastro/endereco'
       path: '/cadastro/endereco'
@@ -185,11 +330,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CadastroTelefoneRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/parceiro/': {
+      id: '/parceiro/'
+      path: '/parceiro'
+      fullPath: '/parceiro/'
+      preLoaderRoute: typeof ParceiroIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parceiro/avaliacoes': {
+      id: '/parceiro/avaliacoes'
+      path: '/parceiro/avaliacoes'
+      fullPath: '/parceiro/avaliacoes'
+      preLoaderRoute: typeof ParceiroAvaliacoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parceiro/cardapios': {
+      id: '/parceiro/cardapios'
+      path: '/parceiro/cardapios'
+      fullPath: '/parceiro/cardapios'
+      preLoaderRoute: typeof ParceiroCardapiosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/restaurante/$id': {
       id: '/restaurante/$id'
       path: '/restaurante/$id'
       fullPath: '/restaurante/$id'
       preLoaderRoute: typeof RestauranteIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/pedidos/': {
+      id: '/admin/pedidos/'
+      path: '/admin/pedidos'
+      fullPath: '/admin/pedidos/'
+      preLoaderRoute: typeof AdminPedidosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/pedidos/$id': {
+      id: '/admin/pedidos/$id'
+      path: '/admin/pedidos/$id'
+      fullPath: '/admin/pedidos/$id'
+      preLoaderRoute: typeof AdminPedidosIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -201,9 +381,18 @@ const rootRouteChildren: RootRouteChildren = {
   HistoricoRoute: HistoricoRoute,
   LoginRoute: LoginRoute,
   PagamentoRoute: PagamentoRoute,
+  AdminEntregasRoute: AdminEntregasRoute,
+  AdminFuncionalidadesRoute: AdminFuncionalidadesRoute,
+  AdminRestaurantesRoute: AdminRestaurantesRoute,
   CadastroEnderecoRoute: CadastroEnderecoRoute,
   CadastroTelefoneRoute: CadastroTelefoneRoute,
+  ParceiroAvaliacoesRoute: ParceiroAvaliacoesRoute,
+  ParceiroCardapiosRoute: ParceiroCardapiosRoute,
   RestauranteIdRoute: RestauranteIdRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  ParceiroIndexRoute: ParceiroIndexRoute,
+  AdminPedidosIdRoute: AdminPedidosIdRoute,
+  AdminPedidosIndexRoute: AdminPedidosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -40,7 +40,7 @@ function FuncionalidadesView() {
                     </div>
                     <Toggle
                       label={f.nome}
-                      checked={estado[f.id]}
+                      checked={estado[f.id] ?? false}
                       onChange={(v) => setEstado((s) => ({ ...s, [f.id]: v }))}
                     />
                   </div>

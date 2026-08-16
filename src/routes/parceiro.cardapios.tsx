@@ -36,7 +36,7 @@ function CardapiosView() {
               <span className="font-heading text-sm text-primary">{brl(p.preco)}</span>
               <Toggle
                 label={`Disponibilidade de ${p.nome}`}
-                checked={ativos[p.id]}
+                checked={ativos[p.id] ?? false}
                 onChange={(v) => setAtivos((a) => ({ ...a, [p.id]: v }))}
               />
             </div>
